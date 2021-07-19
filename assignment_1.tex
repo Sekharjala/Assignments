@@ -151,7 +151,7 @@ Find equation of line joining (1,2) and
 \section{Solution}
 
 To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ 
-consider a point \vec {C}= \myvec {x\\y} in vectorform and $\vec n$ be the normal vector then
+consider a point \vec {C}= \myvec {x\\y} in vector form and $\vec n$ be the normal vector then
 \begin {center}
 \begin {equation}\label{equation1}
 \vec{n^T}\times \vec {A}=1     
@@ -189,8 +189,8 @@ since  A,B,C are collinear
  +1\begin{vmatrix}1 & 3 \\ 2 & 6\end{vmatrix}} =0
 \end{equation}
  \begin{equation}\label{equation6}
-{1 \times (3y-6x) -1 \times(y-2x) + 1 \times(6-6)}=0
-\end{equation}
+{1 \times (3y-6x) -1 \times(y-2x)+ 1 \times(6-6)}=0 
+\end{equation}\\
 \begin{equation}\label{equation6}
 3y-6x-y+2x=0
 \end{equation}
@@ -206,4 +206,28 @@ since  A,B,C are collinear
 \caption{line formed with points(1,2) and (3,6) using Python}
 \label{fig:1}
 \end{figure}
+from Equations(2.0.1) and (2.0.2)
+\begin{equation}
+\vec{A}^T \times \vec n = 1
+\end{equation}
+\begin{equation}
+\vec{B}^T \times \vec n = 1 
+\end{equation}
+so, from Equation (2.0.10) and (2.0.11) the resultant Matrix is \\
+\begin{equation}
+\myvec{{\vec{A}^T} \\ {\vec{B}^T}} \times n = \myvec{1\\1} 
+\end{equation}
+\begin{equation}
+\vec{n}=\myvec{\vec{A}^T \\ \vec{B}^T}^{-1} \times \myvec{1\\1}
+\end{equation}
+For any Matrix \vec{X}
+\begin{equation}
+\vec{X}^{-1} =\frac{adj \vec{X}}{\det \vec{X}} 
+\end{equation}
+To  calculate inverse of matrix the determinant of a matrix should not be zero then unique solution exits
+\begin{equation}
+\det \myvec{{\vec{A}^T} \\ {\vec{B}^T}}=\begin{vmatrix}1 & 2 \\ 3 & 6\end{vmatrix}}=6-6=0
+\end{equation}
+ Here Determinant is Zero so we can not find Invese of
+that equations(2.0.1)and (2.0.2) have same slope or have infinite solutions
 \end{document}
