@@ -172,17 +172,19 @@ from Equations(2.0.1) and (2.0.2)
 \begin{equation}
 \vec{n}=\myvec{\vec{A}^T \\ \vec{B}^T}^{-1}  \myvec{1\\1}
 \end{equation}
-For a Square Matrix $ \vec{X} $
+\\
 \begin{equation}
-\vec{X}^{-1} =\frac{adj \vec{X}}{\det \vec{X}} 
+{\myvec{\vec{A}^T \\ \vec{B}^T}}^{-1} = \frac { adj {{\myvec{\vec{A}^T \\ \vec{B}^T}}}} {\det \myvec{\vec{A}^T \\ \vec{B}^T}}
 \end{equation}
 To  calculate inverse of matrix the determinant of a matrix should not be zero then unique solution exits
+adj {\myvec{\vec{A}^T \\ \vec{B}^T}} = \begin{pmatrix} 6 & -2 \\-3 & 1}\end{pmatrix}
 \begin{equation}
 \det \myvec{{\vec{A}^T} \\ {\vec{B}^T}}=
 \begin{vmatrix}1 & 2 \\ 3 & 6\end{vmatrix}}=6-6=0
 \end{equation}
 \\
 Invese of Matrix dose not exist.\\
+
 Hence The lines formed with  equations(2.0.1)and (2.0.2) have same slope and have infinite solutions
 \begin{figure}[H]
 \centering
@@ -199,9 +201,9 @@ from (2.0.5) the augmented Matrix is
 \begin {center}
 \begin{align}
 \begin{pmatrix}
-1 &  2 & 1\\ 3&  6& 1 
+1 &  2 & 1 \\ 3&  6& 1 
 \end{pmatrix} \overset{3r_1-r_2\rightarrow r_2}{\longrightarrow}
-\begin{pmatrix} 1 &  2& 1\\0 &  0& 2
+\begin{pmatrix} 1 &  2& 1\\0 &  0& -2
 \end{pmatrix}
 \end{align}
 \end{center}
