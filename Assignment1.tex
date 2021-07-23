@@ -150,15 +150,18 @@ Find equation of line joining (1,2) and
 (3,6) using determinants.
 \section{Solution}
 
-To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ 
- and let $\vec n$ be the normal vector then
+To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ , let $\vec{C}=\myvec{x\\y}$ 
+ and let $\vec{n}$ be the normal vector then
 \begin {center}
 \begin {equation}\label{equation1}
 \vec{n^T} \vec {A}=1     
 \end{equation}
 \begin {equation}\label{equation2}
 \vec{n^T} \vec {B}=1     
-\end{equation} 
+\end{equation}
+\begin {equation}\label{equation1}
+\vec{n^T} \vec {C}=1     
+\end{equation}
 \end{center}
 from Equations(2.0.1) and (2.0.2)
 \begin{equation}
@@ -168,43 +171,47 @@ from Equations(2.0.1) and (2.0.2)
 \vec{B}^T  \vec {n} = 1 
 \end{equation}
 \begin{equation}
-\myvec{{\vec{A}^T} \\ {\vec{B}^T}} \vec{n} = \myvec{1\\1} \end{equation}
+\vec{C}^T  \vec {n} = 1 
+\end{equation}
 \begin{equation}
-\vec{n}=\myvec{\vec{A}^T \\ \vec{B}^T}^{-1}  \myvec{1\\1}
+\myvec{{\vec{A}^T} \\ {\vec{B}^T} \\ {\vec{C}^T}} \vec{n} = \myvec{1\\1\\1} \end{equation}
+Now,The augmented Matrix is
+\begin {center}
+\begin{equation}
+\myvec{1 & 2 & 1 \\ 3 & 6 & 1 \\ x &y & 1}
+\end{equation}
+\end{center}
+\begin {center}
+\begin{align}
+\begin{pmatrix}
+1 &  2 & 1 \\ 3&  6& 1 \\x & y &1
+\end{pmatrix} \overset{3r_1-r_2\rightarrow r_2}{\longrightarrow}
+\begin{pmatrix} 1 &  2& 1\\0 &  0 & -2 \\ x & y & 1
+\end{pmatrix}
+\end{align}
+\end{center}
+Determinant of the above Matrix is zero if $\vec{A}$,$\vec{B}$ and $\vec{C}$ are collinear
+\begin{equation}
+\begin{vmatrix}1 & 2 & 1\\ 0 & 0 &-2 \\ x&y&1\end{vmatrix}}=0
 \end{equation}
 \\
-\begin{equation}
-{\myvec{\vec{A}^T \\ \vec{B}^T}}^{-1} = \frac { adj {{\myvec{\vec{A}^T \\ \vec{B}^T}}}} {\det \myvec{\vec{A}^T \\ \vec{B}^T}}
-\end{equation}
-To  calculate inverse of matrix the determinant of a matrix should not be zero then unique solution exits
-adj {\myvec{\vec{A}^T \\ \vec{B}^T}} = \begin{pmatrix} 6 & -2 \\-3 & 1}\end{pmatrix}
-\begin{equation}
-\det \myvec{{\vec{A}^T} \\ {\vec{B}^T}}=
-\begin{vmatrix}1 & 2 \\ 3 & 6\end{vmatrix}}=6-6=0
-\end{equation}
+$ 1 \begin{vmatrix}0 & -2 \\y & 1\end{vmatrix}}-2\begin{vmatrix} 0 &-2 \\ x&1\end{vmatrix}+1\begin{vmatrix} 0 & 0 \\ x & y\end{vmatrix}=0 $ 
 \\
-Invese of Matrix dose not exist. and Matrix \vec{n} can not be formed.
-Hence The lines formed with  equations(2.0.1)and (2.0.2) have same slope and have infinite solutions
+\begin{center}
+-2y-2(-2x)+0=0
+\\
+\begin{align}
+2x-y=0  
+\end{align}
+equation of Line in Vector Form \\
+\begin{align}
+\myvec{2 & -1}\vec{C}=0
+\end{align}
+\end{center}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{Figure_1.png}
 \caption{line formed with points(1,2) and (3,6) using Python}
 \label{fig:1}
 \end{figure}
-from (2.0.5) the augmented Matrix is 
-\begin {center}
-\begin{equation}
-\myvec{1 & 2 & 1 \\ 3 & 6 & 1}
-\end{equation}
-\end{center}
-\begin {center}
-\begin{align}
-\begin{pmatrix}
-1 &  2 & 1 \\ 3&  6& 1 
-\end{pmatrix} \overset{3r_1-r_2\rightarrow r_2}{\longrightarrow}
-\begin{pmatrix} 1 &  2& 1\\0 &  0& -2
-\end{pmatrix}
-\end{align}
-\end{center}
-As the elements of the second Row have only one Non Zero element the system of equations have No Solution for $\vec{n} $
 \end{document}
