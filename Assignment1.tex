@@ -148,8 +148,7 @@ Question :
 Find equation of line joining (1,2) and
 (3,6) using determinants.
 \section{Solution}
-To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ , let $\vec{C}=\myvec{x\\y}$ 
- and let $\vec{n}$ be the normal vector then
+To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ ,let $\vec{n}$ be the normal vector then
 \begin {center}
 \begin {equation}\label{equation1}
 \vec{n^T} \vec {A}=c 
@@ -170,7 +169,25 @@ Augmented vector is
     \myvec{1&2&c\\3&6&c}=0 \\
     \begin{pmatrix} 1 &  2 & c \\ 3&  6& c \end{pmatrix} \\ \overset{3r_1-r_2\rightarrow r_2}{\longrightarrow} \begin{pmatrix} 1 &  2& c\\0 &  0 & -2c\end{pmatrix}
 \end{align}
-Thus, from the above row reduced form we can conclude that the given system of lines has no solution. Therefore, they are inconsistent.
+Thus, from the above row reduced form we can conclude that the given system of lines has solution iff "c=0" and points are collinear .
+\begin{align}
+    \begin{pmatrix} 1 &  2& 0\\0 &  0 & 0\end{pmatrix} = \myvec{0\\0}
+\end{align}    
+Directional vector is $\vec{m} = \myvec {1\\m} =\myvec{1\\2}$ \\
+    Directional vector is 
+\begin{align}
+    \vec{m} = \myvec{1 \\2}
+\end{align}
+    Normal vector 
+\begin{align}
+    \vec{n}= \myvec{-2\\1}
+\end{align}
+    equation of straight line is from (2.0.1) is
+\begin{align}
+    \myvec{-2&1} \vec{A}=0 
+    %\begin{pmatrix} 1 &  2 \\ 0 &  0\end{pmatrix}  \vec{n}=\myvec{0\\0} \\
+   % \vec{n}=\myvec{1&2 \\0&0}^{-1}  \myvec{0\\0} =\myvec{0\\0}
+\end{align}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{Figure_1.png}
