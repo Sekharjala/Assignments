@@ -149,15 +149,12 @@ Find equation of line joining (1,2) and
 (3,6) using determinants.
 \section{Solution}
 To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ ,let $\vec{n}$ be the normal vector then
-\begin {center}
-\begin {equation}\label{equation1}
-\vec{n^T} \vec {A}=c 
-\end{equation}
-\begin {equation}\label{equation2}
-\vec{n^T} \vec {B}=c    
-\end{equation}
-\end{center}
-from Equations(2.0.1) and (2.0.2) \\
+
+\begin {align}
+\vec{n^T} \vec {A}=c \label{eq:1} \\
+\vec{n^T} \vec {B}=c  \label{eq:2} 
+\end{align}
+from Equations \ref{eq:1} and \ref{eq:2} \\
 \begin{align}
     \vec{A}^T \vec {n}=c \\
     \vec{B}^T \vec {n}=c  \\
@@ -186,9 +183,9 @@ The normal vector n to a line is  orthogonal to the direction vector m then \\
 \begin{align}
     \vec{n}= \myvec{-2\\1}
 \end{align}
-    Equation of straight line is from (2.0.1) is
+    Equation of straight line is 
 \begin{align}
-    \myvec{-2&1} \vec{X}=0 
+    \myvec{-2&1} \vec{x}=0 
     %\begin{pmatrix} 1 &  2 \\ 0 &  0\end{pmatrix}  \vec{n}=\myvec{0\\0} \\
    % \vec{n}=\myvec{1&2 \\0&0}^{-1}  \myvec{0\\0} =\myvec{0\\0}
 \end{align}
@@ -198,5 +195,4 @@ The normal vector n to a line is  orthogonal to the direction vector m then \\
 \caption{line formed with points(1,2) and (3,6) using Python}
 \label{fig:1}
 \end{figure}
-
 \end{document}
