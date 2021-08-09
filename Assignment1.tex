@@ -161,17 +161,17 @@ from Equations \eqref{eq:1} and \eqref{eq:2} \\
     \myvec{\vec{A}^T \\ \vec{B}^T} \vec{n}=\myvec{c \\ c} \\
     \myvec{1 &2 \\ 3&6} \vec{n}=\myvec{c\\c}
 \end{align}
-Augmented vector is 
+Augmented Matrix is 
 \begin{align}
-    \myvec{1&2&c\\3&6&c}=0 \\
-    \begin{pmatrix} 1 &  2 & c \\ 3&  6& c \end{pmatrix} \\ \overset{3r_1-r_2\rightarrow r_2}{\longrightarrow} \begin{pmatrix} 1 &  2& c\\0 &  0 & -2c\end{pmatrix}
+    \myvec{1&2&c\\3&6&c} \\
+    \begin{pmatrix} 1 &  2 & c \\ 3&  6& c \end{pmatrix} \overset{3R_1-R_2\rightarrow R_2}{\longrightarrow} \begin{pmatrix} 1 &  2& c\\0 &  0 & -2c\end{pmatrix}
 \end{align}
 Thus, from the above row reduced form we can conclude that the given system of lines has solution iff "c=0" and points are collinear .
 \begin{align}
     \begin{pmatrix} 1 &  2& 0\\0 &  0 & 0\end{pmatrix} \\
     \myvec{1&2}\vec{n}=0
 \end{align}
-The normal vector n to a line is  orthogonal to the direction vector m then \\
+The normal vector $\vec{n}$ to a line is  orthogonal to the direction vector m then \\
 \begin{align}
     \vec{m}^T\vec{n}=0
 \end{align}
@@ -192,7 +192,7 @@ The normal vector n to a line is  orthogonal to the direction vector m then \\
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{Figure_1.png}
-\caption{line formed with points(1,2) and (3,6) using Python}
+\caption{line formed with points \myvec{1&2} and \myvec{3&6} using Python}
 \label{fig:1}
 \end{figure}
 \end{document}
