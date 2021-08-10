@@ -1,87 +1,31 @@
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-
-\usepackage{setspace}
-\usepackage{gensymb}
-
-\singlespacing
-
-
-\usepackage[cmex10]{amsmath}
-
-\usepackage{amsthm}
-
-\usepackage{mathrsfs}
-\usepackage{txfonts}
-\usepackage{stfloats}
-\usepackage{bm}
-\usepackage{cite}
-\usepackage{cases}
-\usepackage{subfig}
-
-\usepackage{longtable}
-\usepackage{multirow}
-
+\documentclass{beamer}
+\mode<presentation>
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{advdate}
+\usepackage{adjustbox}
+\usepackage{subcaption}
 \usepackage{enumitem}
-\usepackage{mathtools}
-\usepackage{steinmetz}
-\usepackage{tikz}
-\usepackage{circuitikz}
-\usepackage{verbatim}
-\usepackage{tfrupee}
-\usepackage[breaklinks=true]{hyperref}
-\usepackage{graphicx}
-\usepackage{tkz-euclide}
-\usepackage{float}
-
-\usetikzlibrary{calc,math}
-\usepackage{listings}
-    \usepackage{color}                                            %%
-    \usepackage{array}                                            %%
-    \usepackage{longtable}                                        %%
-    \usepackage{calc}                                             %%
-    \usepackage{multirow}                                         %%
-    \usepackage{hhline}                                           %%
-    \usepackage{ifthen}                                           %%
-    \usepackage{lscape}     
 \usepackage{multicol}
-\usepackage{chngcntr}
-
-\DeclareMathOperator*{\Res}{Res}
-
-\renewcommand\thesection{\arabic{section}}
-\renewcommand\thesubsection{\thesection.\arabic{subsection}}
-\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-
-\renewcommand\thesectiondis{\arabic{section}}
-\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
-\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
-
-
-\hyphenation{op-tical net-works semi-conduc-tor}
-\def\inputGnumericTable{}                                 %%
-
-\lstset{
-%language=C,
-frame=single, 
-breaklines=true,
-columns=fullflexible
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usetheme{Boadilla}
+\usecolortheme{lily}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{author in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
 }
-\begin{document}
+\setbeamertemplate{navigation symbols}{}
 
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{problem}{Problem}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{Definition}
-
-\newcommand{\BEQA}{\begin{eqnarray}}
-\newcommand{\EEQA}{\end{eqnarray}}
-\newcommand{\define}{\stackrel{\triangle}{=}}
-\newcommand\hlight[1]{\tikz[overlay, remember picture,baseline=-\the\dimexpr\fontdimen22\textfont2\relax]\node[rectangle,fill=blue!50,rounded corners,fill opacity = 0.2,draw,thick,text opacity =1] {$#1$};}
-\bibliographystyle{IEEEtran}
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -99,80 +43,161 @@ columns=fullflexible
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
 \providecommand{\abs}[1]{\left\vert#1\right\vert}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-\providecommand{\norm}[1]{$\left\lVert#1\right\rVert$}
-%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
-\newcommand{\solution}{\noindent \textbf{Solution: }}
-\newcommand{\cosec}{\,\text{cosec}\,}
+%\newcommand{\solution}{\noindent \textbf{Solution: }}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-\numberwithin{equation}{subsection}
-\makeatletter
-\@addtoreset{figure}{problem}
-\makeatother
-\let\StandardTheFigure\thefigure
 \let\vec\mathbf
-\renewcommand{\thefigure}{\theproblem}
-\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
-     \def\rightbox#1{\makebox[0in][r]{#1}}
-     \def\centbox#1{\makebox[0in]{#1}}
-     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
-     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
-\vspace{3cm}
-\title{Assignment No.1}
-\author{RajaSekhar Jala}
-\maketitle
-\newpage
-\bigskip
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
-Download all python codes from 
-\begin{lstlisting}
-https://github.com/Sekharjala/Assignments/blob/main/code
-\end{lstlisting}
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\numberwithin{equation}{section}
+
+\title{Presentation Template}
+\author{RAJASEKHAR JALA \\ Dept. of Electrical Engg.,\\IIT Hyderabad.}
+
+\date{\today} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+\section{Problem}
+\begin{frame}
+\frametitle{Problem Statement}
 %
-and pdf from 
-%
-\begin{lstlisting}
-https://github.com/Sekharjala/Assignments/blob/main/Assignment1.pdf
-\end{lstlisting}
-%
-\section{Question No.Matrices 1.76.1}
-Question :
 Find equation of line joining (1,2) and
 (3,6) using determinants.
-\section{Solution}
-To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ ,let $\vec{n}$ be the normal vector then
+%
+%A circle $C$ passes through 
+%\begin{equation} 
+%\vec{P}=\myvec{-2\\ 4} 
+%\label{eq:circle_7_p}
+%\end{equation} 
+%and touches the $y$-axis at 
+%\begin{equation} 
+%\vec{Q}=\myvec{0\\ 2}. 
+%\label{eq:circle_7_q}
+%\end{equation}
+%Which one of the  following equations can represent a diameter of this circle?
+%\begin{enumerate}[label=(\roman*)]
+%\begin{multicols}{2}
+%\setlength\itemsep{1em}
+%\item $\myvec{4 & 5}\vec{x} = 6 $
+%\item $\myvec{2 & -3}\vec{x} +10 = 0 $
+%\item $\myvec{3 & 4}\vec{x} = 3 $
+%\item $\myvec{5 & 2}\vec{x} +4= 0 $
+%\end{multicols}
+%\end{enumerate}
+\end{frame}
 
-\begin {align}
+%\subsection{Literature}
+\section{Solution}
+\subsection{Linear Equation}
+\begin{frame}
+\frametitle{Linear Equation}
+%\framesubtitle{Literature}
+To construct a line joining $\Vec{A}=\myvec{1\\2}$ and $\vec{B}=\myvec{3\\6}$ \\
+let $\vec{n}$ be the normal vector
+%
+\begin{align}
 \vec{n^T} \vec {A}=c \label{eq:1} \\
 \vec{n^T} \vec {B}=c  \label{eq:2} 
 \end{align}
-from Equations \eqref{eq:1} and \eqref{eq:2} \\
+%
+which results in the following equations
+%
 \begin{align}
-    \vec{A}^T \vec {n}=c \\
-    \vec{B}^T \vec {n}=c  \\
-    \myvec{\vec{A}^T \\ \vec{B}^T} \vec{n}=\myvec{c \\ c} \\
-    \myvec{1 &2 \\ 3&6} \vec{n}=\myvec{c\\c}
+\vec{A}^T \vec {n}=c \\
+\vec{B}^T \vec {n}=c  \\
 \end{align}
-Augmented Matrix is 
+%Let $\vec{O}$ be the centre of $C$. Then the equation of the normal, OQ is
+%\begin{align}
+%%\vec{x}^T\vec{x}-2\vec{O}^T\vec{x} +F = 0
+%\myvec{0 & 1}\brak{\vec{O}-\vec{Q}} &= 0
+%\nonumber \\ 
+%\implies \myvec{0 & 1}\vec{O} = 2
+%\label{eq:circle_7_o1}
+%\end{align}
+%%
+%Also, 
+%%Substituting \eqref{eq:circle_7_p} in \eqref{eq:circle_7_c}, 
+%\begin{align}
+%\norm{\vec{O}-\vec{P}}^2&=\norm{\vec{O}-\vec{Q}}^2 
+%\nonumber \\
+%\implies 2\brak{\vec{P}-\vec{Q}}^T\vec{O} &= \norm{\vec{P}}^2-\norm{\vec{Q}}^2 
+%\nonumber \\
+%\text{or, } \myvec{1 & -1}\vec{O} &= -4
+%\label{eq:circle_7_o2}
+%\end{align}
+%%
+%\eqref{eq:circle_7_o1} and \eqref{eq:circle_7_o2} result in the matrix equation
+%\begin{align}
+%\myvec{1 & -1 \\ 0 & 1}\vec{O} = \myvec{-4\\2}
+%\label{eq:circle_7_matrix}
+%\end{align}
+%yielding the augmented matrix
+%\begin{align}
+%\myvec{1 & -1 & -4\\ 0 & 1 & 2} \leftrightarrow \myvec{1 & 0 & -2\\ 0 & 1 & 2}\implies \vec{O} = \myvec{-2 \\2}
+%\label{eq:circle_7_o}
+%\end{align}
+%%
+\end{frame}
+\subsection{Matrix Equation}
+\begin{frame}
+\frametitle{Matrix Equation}
+
+%\begin{enumerate}[label=(\roman*)]
+
+Resulting in the matrix
 \begin{align}
-    \myvec{1&2&c\\3&6&c} \\
-    \myvec{ 1 &  2 & c \\ 3&  6& c } \overset{3R_1-R_2\rightarrow R_2}{\longrightarrow} \myvec{ 1 &  2& c\\0 &  0 & -2c }
+\label{eq:matrix}
+\myvec{\vec{A}^T \\ \vec{B}^T} \vec{n}=\myvec{c \\ c} \\
+ \myvec{1 &2 \\ 3&6} \vec{n}=\myvec{c\\c}
 \end{align}
-Thus, from the above row reduced form we can conclude that the given system of lines has solution iff c $\equiv$ 0 and points are collinear.
+where the augmented matrix formed is
 \begin{align}
-    \myvec{ 1 &  2& 0\\0 &  0 & 0 } \\
-    \myvec{1&2}\vec{n}=0
+    \myvec{1&2&c\\3&6&c} \label{eq:m1}
 \end{align}
-The normal vector $\vec{n}$ to a line is  orthogonal to the direction vector m then \\
+%\item $\myvec{4 & 5}\vec{O} = 2 \ne 6 $. Incorrect.
+%\vfill
+%\item $\myvec{2 & -3}\vec{O} +10 = 0 $. Correct.
+%\vfill
+%\item $\myvec{3 & 4}\vec{O} = 2 \ne 3 $.  Incorrect.
+%\vfill
+%\item $\myvec{5 & 2}\vec{O} +4= -2 \ne 0 $. Incorrect
+%\end{enumerate}
+\end{frame}
+\subsection{Row Reduction}
+\begin{frame}
+\frametitle{Row Reduction}
+\eqref{eq:m1} can be row reduced as follows
+%
 \begin{align}
+    \label{eq:rowred}
+    \myvec{1&2&c\\3&6&c}\xleftrightarrow[]{R_2 \leftarrow {3R_1}-{R_2}}
+\myvec{1 &  2& c\\0 &  0 & 2c }
+\end{align}
+Thus, from the above row reduced matrix has a solution iff ”2c=0” ,then points are collinear \\
+From \eqref{eq:matrix} \\
+\begin{align}
+    \myvec{1&2}\vec{n}=0 \\
     \vec{m}^T\vec{n}=0
 \end{align}
     Directional vector is 
@@ -181,18 +206,72 @@ The normal vector $\vec{n}$ to a line is  orthogonal to the direction vector m t
 \end{align}
     Normal vector 
 \begin{align}
-    \vec{n}= \myvec{-2\\1}
+    \vec{n}= \myvec{-2\\1} \label{eq:nT}
 \end{align}
-    Equation of straight line is 
+%
+%The radius  of $C$ is obtained as
+%\begin{align}
+%r = \norm{O-P} = 2
+%\end{align}
+\end{frame}
+%\section{Plot}
+\subsection{Line Equation}
+\begin{frame}[fragile]
+\frametitle{Line Equation}
+
+Thus,The line Equation is
 \begin{align}
     \myvec{-2&1} \vec{x}=0 
-    %\begin{pmatrix} 1 &  2 \\ 0 &  0\end{pmatrix}  \vec{n}=\myvec{0\\0} \\
-   % \vec{n}=\myvec{1&2 \\0&0}^{-1}  \myvec{0\\0} =\myvec{0\\0}
 \end{align}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\columnwidth]{Figure_1.png}
-\caption{line formed with points \myvec{1&2} and \myvec{3&6} using Python}
-\label{fig:1}
+The code in 
+{\footnotesize
+\begin{lstlisting}
+https://github.com/Sekharjala/Assignments/blob/main/code/matrices1.76.1.py
+\end{lstlisting}
+}
+%plots Fig. \ref{fig:circle_diameter}.
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.6\columnwidth]{./figs/circle_diameter.eps}
+%\caption{Circle $C$ and all lines (i)-(iv). (ii) is a diameter.}
+%\label{fig:circle_diameter}
+%\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Figure :Line passing through points (1,2) and (3,6)}
+\begin{center}
+\begin{figure}
+$$\includegraphics[width=4in,height=3 in]{Figure_1.png}$$
 \end{figure}
+\end{center}
+\end{frame}
+%\begin{frame}
+%\frametitle{Introduction}
+%\framesubtitle{Literature}
+%%\begin{figure}[t!]
+%%    \centering
+%%    \begin{subfigure}[t]{0.4\columnwidth}
+%%        \centering
+%%        \includegraphics[width=\columnwidth]{point_source}
+%%        \caption{Single point source}
+%%\label{fig3:subfig1}        
+%%    \end{subfigure}%
+%%    ~ 
+%%    \begin{subfigure}[t]{0.4\columnwidth}
+%%        \centering
+%%        \includegraphics[width=\columnwidth]{pointNoPowerDist_new}
+%%        \caption{SNR profile}
+%%\label{fig3:subfig2}
+%%    \end{subfigure}
+%%  %  \caption{Average SNR for a BPP. $N=16$}
+%%    \label{fig3}
+%%  \end{figure}
+%
+%\end{frame}
+%  
+%
+%
+%%
+
 \end{document}
