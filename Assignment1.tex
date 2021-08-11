@@ -7,7 +7,7 @@
 
 
 \usepackage[cmex10]{amsmath}
-
+\usepackage{extarrows}
 \usepackage{amsthm}
 
 \usepackage{mathrsfs}
@@ -164,7 +164,7 @@ from Equations \eqref{eq:1} and \eqref{eq:2} \\
 Augmented Matrix is 
 \begin{align}
     \myvec{1&2&c\\3&6&c} \\
-    \myvec{ 1 &  2 & c \\ 3&  6& c } \overset{3R_1-R_2\rightarrow R_2}{\longrightarrow} \myvec{ 1 &  2& c\\0 &  0 & -2c }
+\myvec{ 1 &  2 & c \\ 3&  6& c } \xleftrightarrow{{3R_1-R_2\rightarrow R_2}} \myvec{ 1 &  2& c\\0 &  0 & -2c }
 \end{align}
 Thus, from the above row reduced form we can conclude that the given system of lines has solution iff c $\equiv$ 0 and points are collinear.
 \begin{align}
